@@ -120,7 +120,7 @@ db.users.find({ $and: [{ edad: { $gte: 25}}, { edad: { $lte: 35}}]});
 //Obtener a todos los usuarios que no sean de Estados Unidos.
 db.users.find({ país: { $not: { $eq: 'Estados unidos'}}});
 //Obtener a todos los usuarios que sean de Londres y que ganen más de $2500 o que tengan más de 30 años.
-db.users.find({ $and: [{ ciudad: { $eq: 'Londres'}}, $or: { salario: { $gt: 2500}}, { edad: { $gt: 30}}] });
+db.users.find({ $and: [{ ciudad: { $eq: 'Londres'}}, { $or: [{ salario: { $gt: 2500}}, { edad: { $gt: 30}}]}] });
 //Obtener a todos los usuarios que sean de Australia y tengan un peso mayor a 140 libras.
 db.users.find({ $and: [{ país: { $eq: 'Australia'}}, { peso: { $gt: 140}}] });
 //Obtener a todos los usuarios que no sean de Londres ni de París.
